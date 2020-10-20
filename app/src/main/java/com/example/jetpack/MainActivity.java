@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText etWidth, etHeight, etLength;
     private TextView tvResult;
     private Button btnCalculate;
-    private MainlViewModel viewModel;
+    private MainViewModel viewModel;
     private Context context;
 
 
@@ -31,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         context = this;
 
-        viewModel = new ViewModelProvider(this).get(MainlViewModel.class);
+        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
+
+        tvResult.setText(String.valueOf(viewModel.result));
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override

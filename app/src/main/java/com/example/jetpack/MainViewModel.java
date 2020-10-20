@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-public class MainlViewModel extends ViewModel {
+public class MainViewModel extends ViewModel {
 
     int result;
     private MutableLiveData<List<User>> users;
@@ -17,9 +17,8 @@ public class MainlViewModel extends ViewModel {
     public LiveData<List<User>> getUsers(Context context){
         if (users == null){
             users = new MutableLiveData<List<User>>();
-
+            loadUsers(context);
         }
-        loadUsers(context);
         return users;
     }
 
